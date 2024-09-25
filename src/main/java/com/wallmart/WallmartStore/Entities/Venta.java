@@ -10,7 +10,7 @@ import lombok.Data;
 @Document(collection = "Venta") //documentto
 @Data //get y set
 
-public class Ventas {
+public class Venta {
 
     private Integer id;
 
