@@ -13,11 +13,13 @@ import com.wallmart.WallmartStore.Service.VentaService;
 @RestController //API REST
 public class VentaController {
     @Autowired
-    private VentaService Ventaervice;
+    private VentaService VentaService;
 
+    //Se utiliza para mapear solicitudes HTTP POST a métodos específicos en un controlador.
+    //Indica que el método del controlador debe ser invocado cuando se realiza una solicitud HTTP
     @PostMapping("/agregarVenta") //endpoint tipo POST
     public Object agregarVenta(@RequestBody Venta Venta){
-        return this.Ventaervice.agregarVenta(Venta);
+        return this.VentaService.agregarVenta(Venta);
     }
 
     /* 
@@ -26,9 +28,11 @@ public class VentaController {
         return this.Ventaervice.obtenerVenta();
     }*/
 
-    @GetMapping("/obtenerVentas")
+    @GetMapping("/obtenerVentas") 
+    //El @RequesParam se utiliza para decir que los parametros se obtendran de la consulta en la url de la solicitud HTTP
+    //y les da un valor por defecto en caso de que no se les de en la consulta.
     public Object obtenerVentas(@RequestParam(required = false, defaultValue = "0") Integer page, @RequestParam(required = false, defaultValue = "10") Integer size){
-        return this.Ventaervice.obtenerVentaPage(page, size);
+        return this.VentaService.obtenerVentaPage(page, size);
     }
 
 }
