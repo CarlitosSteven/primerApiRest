@@ -8,7 +8,7 @@ import lombok.Data;
 @Data //get y set
 public class Producto {
     
-    private int producto_id;
+    private Integer id;
 
     private String nombre;
 
