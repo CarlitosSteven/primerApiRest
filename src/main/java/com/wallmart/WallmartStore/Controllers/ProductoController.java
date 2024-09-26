@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.wallmart.WallmartStore.Service.ProductoService;
 import com.wallmart.WallmartStore.Entities.Producto;
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController //Api rest: se utiliza para definir una clase como un controlador web donde cada método devuelve datos en lugar de una vista. //manejará solicitudes HTTP (GET, POST, PUT, DELETE, etc.)
                 
 public class ProductoController {

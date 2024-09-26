@@ -30,7 +30,7 @@ public class ProductoService {
         return this.productoRepository.findAll();
     }
 
-    public Page<Producto> mostrarProductosPage(int page, int size){
+    public Object mostrarProductosPage(int page, int size){
         //hace una peticion para paginar 
         Pageable pageable = PageRequest.of(page,size);
         
