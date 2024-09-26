@@ -1,5 +1,6 @@
 package com.wallmart.WallmartStore.Service;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,5 +32,9 @@ public class UsuarioService {
 
     public Usuario modificarUsuario(Usuario usuario){
         return this.usuarioRepository.save(usuario);
+    }
+
+    public Optional<Usuario> mostrarUsuarioId(Integer id){
+        return this.usuarioRepository.findById(id);
     }
 }

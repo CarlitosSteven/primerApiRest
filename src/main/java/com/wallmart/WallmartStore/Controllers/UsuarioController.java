@@ -20,8 +20,8 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping("/agregarUsuarios")
-    public Object agregarUsuarios(@RequestBody Usuario usuario){
+    @PostMapping("/agregarUsuario")
+    public Object agregarUsuario(@RequestBody Usuario usuario){
         return this.usuarioService.agregarUsuario(usuario);
     }
 
@@ -38,6 +38,11 @@ public class UsuarioController {
     @PutMapping(value = "/modificarUsuario")
     public Object modificarUsuario(@RequestBody Usuario usuario){
         return this.usuarioService.modificarUsuario(usuario);
+    }
+
+    @GetMapping("/mostrarUsuarioId/{id}")
+    public Object mostrarUsuarioId(@PathVariable Integer id){
+        return this.usuarioService.mostrarUsuarioId(id);
     }
 
 }
