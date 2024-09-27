@@ -37,4 +37,25 @@ public class UsuarioService {
     public Optional<Usuario> mostrarUsuarioId(Integer id){
         return this.usuarioRepository.findById(id);
     }
+
+    public Object verificarUsuario(String nombre, String contrasena){
+        
+        Optional<Usuario> usuarioExistente = this.usuarioRepository.findByNombreUsuario(nombre);
+        if (usuarioExistente.isPresent()) {
+            Usuario usuarioEncontrado = usuarioExistente.get();
+            
+            // Comparar la contraseña usando equals para verificar contenido
+            if (usuarioEncontrado.getContrasena().equals(contrasena)) {
+                return usuarioEncontrado;
+            }
+        }return null;
+
+            
+
+    }
+
+    
+
+    
+    
 }

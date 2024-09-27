@@ -44,5 +44,11 @@ public class UsuarioController {
     public Object mostrarUsuarioId(@PathVariable Integer id){
         return this.usuarioService.mostrarUsuarioId(id);
     }
+                    
+    @PostMapping("/verificarUsuario")
+    public Object verificarUsuario(@RequestBody Usuario usuario){
+        return this.usuarioService.verificarUsuario(usuario.getNombreUsuario(), usuario.getContrasena());
+    }
+    
 
 }
