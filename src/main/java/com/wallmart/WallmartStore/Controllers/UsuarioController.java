@@ -1,11 +1,11 @@
 package com.wallmart.WallmartStore.Controllers;
+
 import com.wallmart.WallmartStore.Entities.Usuario;
 import com.wallmart.WallmartStore.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@CrossOrigin(origins = "http//localhost:4200")
+
 @RestController
 public class UsuarioController {
     @Autowired
@@ -35,10 +35,8 @@ public class UsuarioController {
         this.usuarioService.eliminarUsuario(id);
     }
 
-    @PutMapping(value = "/modificarUsuario")
-    public Object modificarUsuario(@RequestBody Usuario usuario){
-        return this.usuarioService.modificarUsuario(usuario);
-    }
+    
+    
 
     @GetMapping("/mostrarUsuarioId/{id}")
     public Object mostrarUsuarioId(@PathVariable Integer id){

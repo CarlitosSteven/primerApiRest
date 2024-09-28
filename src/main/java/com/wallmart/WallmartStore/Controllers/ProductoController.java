@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.wallmart.WallmartStore.Service.ProductoService;
 import com.wallmart.WallmartStore.Entities.Producto;
 
-@CrossOrigin(origins = "http://localhost:4200") //asdasdfasdf
+
 @RestController //Api rest: se utiliza para definir una clase como un controlador web donde cada método devuelve datos en lugar de una vista. //manejará solicitudes HTTP (GET, POST, PUT, DELETE, etc.)
                 
 public class ProductoController {

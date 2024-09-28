@@ -19,12 +19,12 @@ public class WallmartStoreApplication {
 	}
 
 	@Bean
-    public WebMvcConfigurer corsConfigurer() {                //COPIAR EN TODOS LOS PROYECTOS PARA EVITAR ERRORES DE CORS
+    public WebMvcConfigurer corsConfigurer() {                //COPIAR EN TODOS LOS PROYECTOS PARA EVITAR ERRORES DE CORS  (Cualquiera puede acceder a mi aplicacion)
         return new WebMvcConfigurer() {
             
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-
+                
                 registry.addMapping("/**")
                         .allowedOrigins("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wallmart.WallmartStore.Entities.Venta;
 import com.wallmart.WallmartStore.Service.VentaService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController //API REST
 public class VentaController {
     @Autowired

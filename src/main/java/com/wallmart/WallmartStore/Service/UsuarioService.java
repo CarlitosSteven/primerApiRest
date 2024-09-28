@@ -30,22 +30,24 @@ public class UsuarioService {
         this.usuarioRepository.deleteById(id);
     }
 
-    public Usuario modificarUsuario(Usuario usuario){
-        return this.usuarioRepository.save(usuario);
-    }
-
     public Optional<Usuario> mostrarUsuarioId(Integer id){
         return this.usuarioRepository.findById(id);
     }
 
-    public Object verificarUsuario(String nombre, String contrasena){
+    
+    public Object verificarUsuario(String nombreUsuario, String contrasena){
         
-        Optional<Usuario> usuarioExistente = this.usuarioRepository.findByNombreUsuario(nombre);
+        //se crea un objeto optional de usuario, el cual contiene el metodo findByNombreUsuario
+        Optional<Usuario> usuarioExistente = this.usuarioRepository.findByNombreUsuario(nombreUsuario);
+
+        //condicional que verifica si el usuario existe
         if (usuarioExistente.isPresent()) {
+            //en caso de si existir se crea un Objeto Usuario llamado usuario encontrado y se le asgina todo el body del usuario existente.
             Usuario usuarioEncontrado = usuarioExistente.get();
             
             // Comparar la contraseña usando equals para verificar contenido
             if (usuarioEncontrado.getContrasena().equals(contrasena)) {
+                //si la contrasena del usuario encontrado es igual a la contrasena que se puso, se retorna el usuario
                 return usuarioEncontrado;
             }
         }return null;

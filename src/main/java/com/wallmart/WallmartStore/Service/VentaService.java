@@ -21,6 +21,10 @@ public class VentaService {
     private VentaRepository VentaRepository;
 
     public Venta agregarVenta(Venta venta){
+        //Simula un Id autoincremental
+        Long ultimoId = this.VentaRepository.count(); //encuentra el ultimo ID
+        venta.setId(ultimoId.intValue()+1); //el ultimo Id + 1
+        //guarda la venta en el repositorio
         return this.VentaRepository.save(venta);
     }
 
@@ -34,6 +38,5 @@ public class VentaService {
 
         return this.VentaRepository.findAll(pageable);
        
-        
     }
 }

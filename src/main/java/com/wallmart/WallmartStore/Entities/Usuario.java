@@ -18,5 +18,5 @@ public class Usuario {
 
     private String contrasena;
 
-    private float saldo;
+    private Float saldo;
 }
