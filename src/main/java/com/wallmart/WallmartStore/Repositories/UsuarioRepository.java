@@ -16,7 +16,6 @@ public interface UsuarioRepository extends MongoRepository<Usuario, Integer> {
     Page<Usuario> findAll(Pageable pageable);
 
     
-    boolean existsByNombreUsuario(String nombreUsuario);
 
     Optional<Usuario> findByNombreUsuario(String nombreUsuario);
 

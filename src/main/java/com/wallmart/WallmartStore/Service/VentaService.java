@@ -2,6 +2,7 @@ package com.wallmart.WallmartStore.Service;
 
 import java.util.List;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -30,6 +31,10 @@ public class VentaService {
 
     public List<Venta> obtenerVenta(){
         return this.VentaRepository.findAll();
+    }
+
+    public Optional<Venta> obtenerVentaId(Integer id){
+        return this.VentaRepository.findById(id);
     }
 
     //Paginando

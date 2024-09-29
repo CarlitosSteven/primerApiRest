@@ -3,6 +3,7 @@ package com.wallmart.WallmartStore.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,9 +26,9 @@ public class VentaController {
     }
 
     
-    @GetMapping("/obtenerVenta")
-    public Object obtenerVenta(){
-        return this.VentaService.obtenerVenta();
+    @GetMapping("/obtenerVentaId/{id}")
+    public Object obtenerVentaId(@PathVariable Integer id){
+        return this.VentaService.obtenerVentaId(id);
     }
 
     @GetMapping("/obtenerVentas") 
